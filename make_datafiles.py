@@ -211,16 +211,19 @@ def write_to_bin(url_file, out_file, makevocab=False):
 
 def check_num_stories(stories_dir, num_expected):
   num_stories = len(os.listdir(stories_dir))
+  print(num_stories, num_expected)
   if num_stories != num_expected:
     raise Exception("stories directory %s contains %i files but should contain %i" % (stories_dir, num_stories, num_expected))
 
 
 if __name__ == '__main__':
-  if len(sys.argv) != 3:
-    print("USAGE: python make_datafiles.py <cnn_stories_dir> <dailymail_stories_dir>")
-    sys.exit()
-  cnn_stories_dir = sys.argv[1]
-  dm_stories_dir = sys.argv[2]
+  # if len(sys.argv) != 3:
+  #   print("USAGE: python make_datafiles.py <cnn_stories_dir> <dailymail_stories_dir>")
+  #   sys.exit()
+  # cnn_stories_dir = sys.argv[1]
+  # dm_stories_dir = sys.argv[2]
+  cnn_stories_dir = r'C:\Users\Heath\OneDrive\Python Projects\GitHub\cnn-dailymail\cnn_stories\cnn\stories'
+  dm_stories_dir = r'C:\Users\Heath\OneDrive\Python Projects\GitHub\cnn-dailymail\dailymail_stories\dailymail\stories'
 
   # Check the stories directories contain the correct number of .story files
   check_num_stories(cnn_stories_dir, num_expected_cnn_stories)
